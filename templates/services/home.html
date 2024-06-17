@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>saamaan.in</title>
+    <link rel="stylesheet" href="{% static 'homestyles.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class='navbar'>
+        <h1 class="logo">SAAMAAN.in</h1>
+        <div class="menu">
+            <h1>HOME</h1>
+            <h1>STORE</h1>
+            <h1>CONTACT</h1>
+            <h1>ABOUT US</h1>
+        </div>
+        <div class='search-wrapper'>
+            <input type="text" placeholder='Search...'></div>
+        <div class="box">
+            <a href="/shoppingcart"><i class='bx bxs-cart'></i></a>
+        <a href="/user"><i class='bx bxs-user-circle'></i></a>
+        </div>
+    </div>
+    <div class="category">
+        <div class="category-card">
+            <div class="emoji"><img src="{% static 'electric-plug.png' %}" alt=""></div>
+            <h1>ELECTRONICS</h1>
+        </div>
+        <div class="category-card">
+            <div class="emoji"><img src="{% static "mobile-phone.png" %}" alt=""></div>
+            <h1>PHONES</h1>
+        </div>
+        <div class="category-card">
+            <div class="emoji"><img src="{% static "hammer-and-wrench.png" %}" alt=""></div>
+            <h1>Tools</h1>
+        </div>
+        <div class="category-card">
+            <div class="emoji"><img src="{% static "t-shirt.png" %}" alt=""></div>
+            <h1>Fashion</h1>
+        </div>
+        <div class="category-card">
+            <div class="emoji"><img src="{% static "laptop.png" %}" alt=""></div>
+            <h1>Laptops</h1>
+        </div>
+        <div class="category-card">
+            <div class="emoji"><img src="{% static "pill.png" %}" alt=""></div>
+            <h1>Medicines</h1>
+        </div>
+        <div class="category-card">
+            <div class="emoji"><img src="{% static "teddy-bear.png" %}" alt=""></div>
+            <h1>Toys</h1>
+        </div>
+    </div>
+    <div class="category">
+        <div class="item-card">
+            <img src="{% static 'banner.png' %}" alt="Product Image">
+            <div class="item-details">
+                <h2>Product Name</h2>
+                <p>Ratings: 4.5</p>
+                <p>Price: $50</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
