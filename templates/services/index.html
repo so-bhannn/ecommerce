@@ -1,0 +1,268 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-commerce Site</title>
+    <link rel="stylesheet" href="{% static 'indexstyles.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    {% comment %} <div class="floating-cart"><a href="/shoppingcart"><i class='bx bx-cart'></i></a></div> {% endcomment %}
+    <div class="background"></div>
+    <div class="content">
+        <div class='navbar'>
+        <h1 class="logo">SAAMAAN.in</h1>
+        <div class="menu">
+            <h1>HOME</h1>
+            <h1>STORE</h1>
+            <h1>CONTACT</h1>
+            <h1>ABOUT US</h1>
+        </div>
+        <div class='search-wrapper'>
+            <input type="text" placeholder='Search...'></div>
+        <div class="box">
+            <a href="/shoppingcart"><i class='bx bxs-cart'></i></a>
+        <a href="/user"><i class='bx bxs-user-circle'></i></a>
+        </div>
+        </div>
+        <div class="hero">
+            <div class="text">
+                <h1>Discover Your Next Favorite Product</h1>
+                <p>Grab exceptional deals at extraordinary prices.</p>
+                <a href="/home"><button action='/home'>GRAB AWESOME OFFERS</button></a>
+            </div class="text">
+        </div class="hero">
+    </div class="content"><br>
+    <div class="section1">
+        <div class="image">
+            <img src='{% static "yellow suitcase.jpg" %}' alt="">
+        </div>
+        <div class="text">
+            <h1>Adventure Awaits.</h1>
+            <p>Gear Up for Your Next Escape with Our Top Picks.</p>
+            <button>SHOP NOW</button>
+        </div>
+    </div>
+    <div class="section2">
+        <div class="image">
+            <img src='{% static "gadgets.jpg" %}' alt="">
+        </div>
+        <div class="text">
+            <h1>Tech That Makes Life Easier.</h1>
+            <p> Smart Solutions for Your Busy Lifestyle.</p>
+            <button>SHOP NOW</button>
+        </div>
+    </div>
+    <div class="section1">
+        <div class="image">
+            <img src='{% static "fashion.jpg" %}' alt="">
+        </div>
+        <div class="text">
+            <h1>Level Up Your Style.</h1>
+            <p> Sustainable Fashion Finds for the Eco-Conscious Shopper.</p>
+            <button>SHOP NOW</button>
+        </div>
+    </div>
+    <div class="section2">
+        <div class="image">
+            <img src='{% static "pillow.jpg" %}' alt="">
+        </div>
+        <div class="text">
+            <h1> Sleepless Nights? </h1>
+            <p> We've Got the Pillow You Didn't Know You Dreamed Of.</p>
+            <button>SHOP NOW</button>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1 class="logo">SAAMAAN.in</h1>
+                <p>Discover Your Next Favorite Product</p>
+                <div class="contact">
+                    <span><i class='bx bxs-phone-call'></i> +91 1234567890</span>
+                    <span><i class='bx bxs-envelope'></i> contact@saamaan.in</span>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-youtube'></i></a>
+                </div>
+            </div>
+            <h2> Made with &#10084; by so_bhann</h2>
+        </div>
+    </footer>
+
+    {% comment %} <div class="section">
+        <div class="container">
+            <div class="Text">
+                <h1 class="category">ELECTRONICS</h1>
+            </div>
+            <div class="card-container">
+                {% for product in electronics %}
+                <div class="card">
+                    <img src="{{ product.image.url }}">
+                    <div class="description">
+                        <h1>{{ product.name }}</h1>
+                        <h1>₹{{ product.price }}</h1>
+                    </div>
+                    <a href="/product/{{ product.id }}">Know More</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div> {% endcomment %}
+
+    
+    {% comment %} <div class="container">
+        <div class="Text">
+            <h1 class="category">ELECTRONICS</h1>
+        </div>
+        <div class="card-container">
+            <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div>
+        <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div>
+        <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div>
+        <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div></div><br>
+    <div class="container">
+        <div class="Text">
+            <h1 class="category">GROCERY</h1>
+        </div>
+        <div class="card-container">
+            <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div>
+        <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div>
+        <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div>
+        <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div></div><br>
+    <div class="container">
+        <div class="Text">
+            <h1 class="category">FASHION</h1>
+        </div>
+        <div class="card-container">
+            <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div>
+        <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div>
+        <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div>
+        <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div></div><br>
+    <div class="container">
+        <div class="Text">
+            <h1 class="category">MOBILES</h1>
+        </div>
+        <div class="card-container">
+            <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div>
+        <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div>
+        <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div>
+        <div class="card">
+            <img src="{% static 'picture.webp' %}">
+            <div class="description">
+                <h1>Product1</h1>
+                <h1>₹100</h1>
+            </div>
+            <button action="/">Know More</button>
+        </div></div>
+    </div>
+</body>
+</html> {% endcomment %}

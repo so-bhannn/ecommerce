@@ -1,0 +1,36 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "shoppingcartstyles.css" %}">
+</head>
+<body>
+    <div class="cart-total">
+        <h2>Subtotal:</h2>
+        <h2 class="amount"> ₹100</h2>
+    </div>
+    <br>
+    <div class="cart">
+        <div class="cart-item">
+            <img class="item-image" src="{% static 'picture.webp' %}" alt="Product Image">
+            <div class="item-details">
+                <h2 class="item-title">Product Title</h2>
+                <p class="item-price">₹100</p>
+                <label for="quantity">Qty:</label>
+                <select id="quantity" name="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <button class="remove-button">Delete</button>
+            </div>
+        </div>
+        <!-- Repeat .cart-item for each item in the cart -->
+    </div>
+    <button class="checkout-button">Proceed to checkout</button>
+</body>
+</html>
