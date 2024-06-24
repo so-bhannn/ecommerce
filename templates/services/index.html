@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My E-commerce Site</title>
-    <link rel="stylesheet" href="{% static 'indexstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/indexstyles.css' %}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -20,10 +20,18 @@
             <h1>ABOUT US</h1>
         </div>
         <div class='search-wrapper'>
-            <input type="text" placeholder='Search...'></div>
+            <input type="text" placeholder='Search...'>
+        </div>
+
+        {% if email %}
+        <a href="/authentication/logout"><button class="auth">Logout</button></a>
+        {% else %}
+        <a href="/authentication/login"><button class="auth">Login</button></a>
+        {% endif %}
+        
         <div class="box">
             <a href="/shoppingcart"><i class='bx bxs-cart'></i></a>
-        <a href="/user"><i class='bx bxs-user-circle'></i></a>
+            <a href="/user"><i class='bx bxs-user-circle'></i></a>
         </div>
         </div>
         <div class="hero">
@@ -36,7 +44,7 @@
     </div class="content"><br>
     <div class="section1">
         <div class="image">
-            <img src='{% static "yellow suitcase.jpg" %}' alt="">
+            <img src='{% static "images/yellow suitcase.jpg" %}' alt="">
         </div>
         <div class="text">
             <h1>Adventure Awaits.</h1>
@@ -46,7 +54,7 @@
     </div>
     <div class="section2">
         <div class="image">
-            <img src='{% static "gadgets.jpg" %}' alt="">
+            <img src='{% static "images/gadgets.jpg" %}' alt="">
         </div>
         <div class="text">
             <h1>Tech That Makes Life Easier.</h1>
@@ -56,7 +64,7 @@
     </div>
     <div class="section1">
         <div class="image">
-            <img src='{% static "fashion.jpg" %}' alt="">
+            <img src='{% static "images/fashion.jpg" %}' alt="">
         </div>
         <div class="text">
             <h1>Level Up Your Style.</h1>
@@ -66,7 +74,7 @@
     </div>
     <div class="section2">
         <div class="image">
-            <img src='{% static "pillow.jpg" %}' alt="">
+            <img src='{% static "images/pillow.jpg" %}' alt="">
         </div>
         <div class="text">
             <h1> Sleepless Nights? </h1>

@@ -1,3 +1,9 @@
+{% if alert %}
+    <script>
+        alert("{{alert}}")
+    </script>
+{% endif %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +11,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'signupstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/signupstyles.css' %}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    
     <div class="wrapper">
+        {% if messages %}
+            {% for message in messages %}
+                <div>{{ message }}</div>
+            {% endfor %}
+         {% endif %}
         <a href="/"><i class='bx bx-home-alt'></i></a>
         <h1>Register</h1>
-        <form action="/" method='POST'>
+        <form action="/authentication/postsignup/" method='post'>
+            {% csrf_token %}
             <div class="input-box">
                 <input type="text" id="username" name="username" placeholder="Create a username" required>
                 </div>
@@ -22,7 +35,7 @@
             <div class="input-box">
                 <input type="text" id="lname" name="fname" placeholder="Last Name" required></div>
             <div class="input-box">
-                <input type="email" id="email" name="email" placeholder="email id" required></div>
+                <input type="email" id="email" name="email" placeholder="Email ID" required></div>
             <div class="input-box">
                 <input type="password" id="pass1" name="pass1" placeholder="Password" required></div>
             <div class="input-box">
@@ -30,7 +43,7 @@
                 </div>
             <button type="submit" class="btn">Signup</button>
             <div class="login">
-                <a href="/login">Already Have an Account?</a>
+                <a href="/authentication/login">Already Have an Account?</a>
             </div>
         </form>
     </div>
