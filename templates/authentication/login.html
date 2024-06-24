@@ -1,3 +1,8 @@
+{% if alert %}
+    <script>
+        alert("{{alert}}")
+    </script>
+{% endif %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'loginstyles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/loginstyles.css' %}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -13,12 +18,13 @@
         <i class='bx bxs-user-circle'></i>
         <a href="/"><i class='bx bx-home-alt'></i></a>
         <h1>Welcome</h1>
-        <form action="/" method='get'>
+        <form action="/authentication/postlogin/" method='post'>
+            {% csrf_token %}
             <div class="input-box">
-                <input type="text" placeholder="Username" required>
+                <input type="text" name="email" placeholder="Email" required>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Password" required>
+                <input type="password" name="passw" placeholder="Password" required>
             </div>
             <div class="remember-forgot">
                 <label><input type="checkbox">Remember me</label>
@@ -26,7 +32,7 @@
             </div>
             <button type="submit" class="btn" value='loggedin'>LOGIN</button>
             <div class="register">
-                <a href="/signup">Don't have an account?</a>  
+                <a href="/authentication/signup">Don't have an account?</a>  
             </div>
         </form>
     </div>
