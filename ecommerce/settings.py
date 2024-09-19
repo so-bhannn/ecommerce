@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-tn*0_!1ck-wr15$)_vq)cgl0k*e*g53+p2#nu^c30$of%ruxix'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost',".vercel.app" , ".now.sh"]
+ALLOWED_HOSTS = ["ecommerce-mu-orpin.vercel.app" ,'.vercel.app', ".now.sh"]
 
 
 # Application definition
