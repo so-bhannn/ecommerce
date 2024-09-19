@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-tn*0_!1ck-wr15$)_vq)cgl0k*e*g53+p2#nu^c30$of%ruxix'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [".vercel.app" , ".now.sh"]
+ALLOWED_HOSTS = ['localhost',".vercel.app" , ".now.sh"]
 
 
 # Application definition
@@ -115,9 +118,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS =[os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT=[os.path.join(BASE_DIR,'staticfiles_build','static')]
+STATIC_URL = 'staticfiles_build/static/'
+STATICFILES_DIRS =[os.path.join(BASE_DIR,'staticfiles_build')]
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
 
 
 # Default primary key field type
